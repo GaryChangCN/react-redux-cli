@@ -3,7 +3,8 @@
 ```
 git clone git@github.com:GaryChangCN/react-redux-cli.git
 yarn install
-yarn run dev
+yarn run dev //开发环境
+yarn run build //生产环境
 ```
 
 ## 其他
