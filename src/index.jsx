@@ -21,8 +21,4 @@ class Index extends Component{
 }
 
 var app=document.getElementById("app");
-var render=function(){
-	ReactDOM.render(<Index/>,app);
-}
-render();
-store.subscribe(render);
+ReactDOM.render(<Index/>,app);

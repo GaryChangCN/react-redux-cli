@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 let plugins = [];
-let entry = "./src/index.tsx";
+let entry = "./src/index.jsx";
 if (process.env.NODE_ENV == "production") {
     plugins = [
         new webpack.DefinePlugin({
