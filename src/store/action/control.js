@@ -1,27 +1,32 @@
-const INCREASE = 'INCREASE';
-const DECREASE = 'DECREASE';
+import {INCREASE, DECREASE} from '../actionTypes';
 
-import { fetch } from '../../service';
+import { fetch } from '../../service/';
 
-export function increase(dispatch) {
-    dispatch({
-        type: INCREASE,
-        payload: { value: 1 }
-    });
-}
-
-export function decrease(dispatch) {
-    dispatch({
-        type: DECREASE,
-        payload: { value: 1 }
-    });
-}
-
-export function asyncG(dispatch) {
-    fetch().then((value) => {
+export function increase() {
+    return (dispatch) => {
         dispatch({
             type: INCREASE,
-            payload: { value }
+            payload: { value: 1 }
+        });
+    }
+}
+
+export function decrease() {
+    return (dispatch) => {
+        dispatch({
+            type: DECREASE,
+            payload: { value: 1 }
+        });
+    }
+}
+
+export function asyncG() {
+    return (dispatch) => {
+        fetch().then((value) => {
+            dispatch({
+                type: INCREASE,
+                payload: { value }
+            })
         })
-    });
+    }
 }

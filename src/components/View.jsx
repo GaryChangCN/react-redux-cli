@@ -1,6 +1,6 @@
 import React,{Component,PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {increase,decrease,asyncG} from './../store/action/control';
+import {increase,decrease,asyncG} from '../store/action/control';
 
 function mapStateToProps(state){
 	return {
@@ -11,13 +11,13 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
 	return {
 		de(){
-			decrease(dispatch);
+			dispatch(decrease());
 		},
 		in(){
-            increase(dispatch);
+			dispatch(increase());
 		},
 		asyncG(){
-            asyncG(dispatch);
+			dispatch(asyncG())
 		}
 	}
 }
